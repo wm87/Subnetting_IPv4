@@ -1,0 +1,14 @@
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\bin\Release\WPF_Supernetting.exe.config
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\bin\Release\WPF_Supernetting.exe
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\bin\Release\WPF_Supernetting.pdb
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\WPF_Supernetting.csproj.AssemblyReference.cache
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\MainWindow.baml
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\MainWindow.g.cs
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\App.g.cs
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\WPF_Supernetting_MarkupCompile.cache
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\WPF_Supernetting.g.resources
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\WPF_Supernetting.Properties.Resources.resources
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\WPF_Supernetting.csproj.GenerateResource.cache
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\WPF_Supernetting.csproj.CoreCompileInputs.cache
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\WPF_Supernetting.exe
+C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Release\WPF_Supernetting.pdb

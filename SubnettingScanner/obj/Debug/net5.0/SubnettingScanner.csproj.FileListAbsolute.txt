@@ -1,0 +1,12 @@
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\bin\Debug\net5.0\SubnettingScanner.deps.json
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\bin\Debug\net5.0\SubnettingScanner.dll
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\bin\Debug\net5.0\ref\SubnettingScanner.dll
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\bin\Debug\net5.0\SubnettingScanner.pdb
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\net5.0\SubnettingScanner.csproj.AssemblyReference.cache
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\net5.0\SubnettingScanner.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\net5.0\SubnettingScanner.AssemblyInfoInputs.cache
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\net5.0\SubnettingScanner.AssemblyInfo.cs
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\net5.0\SubnettingScanner.csproj.CoreCompileInputs.cache
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\net5.0\SubnettingScanner.dll
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\net5.0\ref\SubnettingScanner.dll
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\net5.0\SubnettingScanner.pdb

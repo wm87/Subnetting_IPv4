@@ -1,0 +1,9 @@
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\bin\Debug\netcoreapp3.1\SubnettingScanner.deps.json
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\bin\Debug\netcoreapp3.1\SubnettingScanner.dll
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\bin\Debug\netcoreapp3.1\SubnettingScanner.pdb
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\netcoreapp3.1\SubnettingScanner.csproj.AssemblyReference.cache
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\netcoreapp3.1\SubnettingScanner.AssemblyInfoInputs.cache
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\netcoreapp3.1\SubnettingScanner.AssemblyInfo.cs
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\netcoreapp3.1\SubnettingScanner.csproj.CoreCompileInputs.cache
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\netcoreapp3.1\SubnettingScanner.dll
+C:\Users\mawei\Desktop\WPF_Supernetting\SubnettingScanner\obj\Debug\netcoreapp3.1\SubnettingScanner.pdb

@@ -1,0 +1,560 @@
+﻿<Window x:Class="WPF_Supernetting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Title="MainWindow" Width="1200" Height="1005.437" ResizeMode="NoResize" Topmost="True" WindowStartupLocation="CenterScreen" mc:Ignorable="d" Loaded="Window_Loaded">
+
+
+    <Window.Resources>
+        <!--  Toggle Button Style Template  -->
+        <ImageBrush x:Key="tb_mouse_over" ImageSource="toggle_menu_48px.png" />
+        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True" />
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource tb_mouse_over}" />
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource tb_mouse_over}" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="{StaticResource tb_mouse_over}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
+    <Grid Height="750" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid Margin="0,0,0,353">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Offset="0.0" Color="White" />
+                    <GradientStop Offset="0.5" Color="White" />
+                    <GradientStop Offset="1.0" Color="white" />
+                </LinearGradientBrush>
+            </Grid.Background>
+        </Grid>
+        <Grid Height="750" VerticalAlignment="Top">
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop x:Name="grid1_GradientBackground_Top" Offset="0.0" Color="#2e333a" />
+                    <GradientStop x:Name="grid1_GradientBackground_Center" Offset="0.5" Color="Black" />
+                    <GradientStop x:Name="grid1_GradientBackground_Bottom" Offset="1.0" Color="#2e333a" />
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Grid Margin="800,0,0,0">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name="grid2_GradientBackground_Top" Offset="0.0" Color="Black" />
+                        <GradientStop x:Name="grid2_GradientBackground_Center" Offset="0.5" Color="#2e333a" />
+                        <GradientStop x:Name="grid2_GradientBackground_Bottom" Offset="1.0" Color="#2e333a" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid Margin="15,197,25,26" RenderTransformOrigin="0.5,0.5">
+                    <Grid.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="-1"/>
+                            <SkewTransform/>
+                            <RotateTransform/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </Grid.RenderTransform>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="265*"/>
+                        <RowDefinition Height="262*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop x:Name="grid3_GradientBackground_Top" Offset="0.0" Color="black" />
+                            <GradientStop x:Name="grid3_GradientBackground_Center" Offset="0.5" Color="#2e333a" />
+                            <GradientStop x:Name="grid3_GradientBackground_Bottom" Offset="1.0" Color="#2e333a" />
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </Grid.Effect>
+                    <DataGrid x:Name="dgvIPRanges" Height="523" VerticalAlignment="Top" BorderBrush="{x:Null}" Grid.RowSpan="2" HorizontalAlignment="Left" Width="339" Margin="6,-4,0,0" RenderTransformOrigin="0.5,0.5" Background="{x:Null}">
+                        <DataGrid.Effect>
+                            <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                        </DataGrid.Effect>
+                        <DataGrid.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="-1"/>
+                                <SkewTransform/>
+                                <RotateTransform/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </DataGrid.RenderTransform>
+                    </DataGrid>
+                </Grid>
+            </Grid>
+            <Grid Height="80" Margin="187,427,0,243" HorizontalAlignment="Left" VerticalAlignment="Center" Width="584">
+
+                <RadioButton x:Name="cb_ClsA" Margin="20,0,5,0" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" Checked="cb_ClsA_Checked" Content=" Class A" Cursor="Hand" FontSize="6.3" Foreground="White">
+                    <RadioButton.Background>
+                        <RadialGradientBrush RadiusX="1.5" RadiusY="1.5">
+                            <GradientStop Offset="0" Color="#2e333a" />
+                            <GradientStop Offset="0.25" Color="White" />
+                            <GradientStop Offset="0.9" Color="Black" />
+                        </RadialGradientBrush>
+                    </RadioButton.Background>
+                    <RadioButton.LayoutTransform>
+                        <ScaleTransform ScaleX="3.5" ScaleY="3.5" />
+                    </RadioButton.LayoutTransform>
+                    <RadioButton.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </RadioButton.Effect>
+                </RadioButton>
+                <RadioButton x:Name="cb_ClsB" Margin="20,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" Checked="cb_ClsB_Checked" Content=" Class B" Cursor="Hand" FontSize="6.3" Foreground="White">
+                    <RadioButton.Background>
+                        <RadialGradientBrush RadiusX="1.5" RadiusY="1.5">
+                            <GradientStop Offset="0" Color="#2e333a" />
+                            <GradientStop Offset="0.25" Color="White" />
+                            <GradientStop Offset="0.9" Color="Black" />
+                        </RadialGradientBrush>
+                    </RadioButton.Background>
+                    <RadioButton.LayoutTransform>
+                        <ScaleTransform ScaleX="3.5" ScaleY="3.5" />
+                    </RadioButton.LayoutTransform>
+                    <RadioButton.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </RadioButton.Effect>
+                </RadioButton>
+                <RadioButton x:Name="cb_ClsC" Margin="435,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" Checked="cb_ClsC_Checked" Content=" Class C" Cursor="Hand" FontSize="6.3" Foreground="White">
+                    <RadioButton.Background>
+                        <RadialGradientBrush RadiusX="1.5" RadiusY="1.5">
+                            <GradientStop Offset="0" Color="#2e333a" />
+                            <GradientStop Offset="0.25" Color="White" />
+                            <GradientStop Offset="0.9" Color="Black" />
+                        </RadialGradientBrush>
+                    </RadioButton.Background>
+                    <RadioButton.LayoutTransform>
+                        <ScaleTransform ScaleX="3.5" ScaleY="3.5" />
+                    </RadioButton.LayoutTransform>
+                    <RadioButton.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </RadioButton.Effect>
+                </RadioButton>
+            </Grid>
+            <Grid Margin="0,0,0,22" />
+            <Grid x:Name="title" Width="800" Height="113" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name="gridTitle_GradientBackground_Top" Offset="0.0" Color="#2e333a" />
+                        <GradientStop x:Name="gridTitle_GradientBackground_Center" Offset="0.5" Color="Black" />
+                        <GradientStop x:Name="gridTitle_GradientBackground_Bottom" Offset="1.0" Color="#2e333a" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                </Grid.Effect>
+                <TextBlock x:Name="txt_title" Width="470" Height="30" Margin="200,42,130,41" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" FontSize="22" Foreground="White" Text="S U B N E T  C A L C U L A T O R  F O R  I P v 4">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="40" Direction="-90" ShadowDepth="1" Color="White" />
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock x:Name="txt_title_Copy" Width="470" Height="30" Margin="70,820,260,-737" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" FontSize="22" Foreground="White" Text="S U B N E T  C A L C U L A T O R  F O R  I P v 4">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="40" Direction="-90" ShadowDepth="1" Color="White" />
+                    </TextBlock.Effect>
+                </TextBlock>
+            </Grid>
+            <Grid x:Name="ip" Width="613" Height="75" Margin="187,197,0,0" HorizontalAlignment="Left" VerticalAlignment="top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name="gridIp_GradientBackground_Top" Offset="0.0" Color="#2e333a" />
+                        <GradientStop x:Name="gridIp_GradientBackground_Center" Offset="0.5" Color="Black" />
+                        <GradientStop x:Name="gridIp_GradientBackground_Bottom" Offset="1.0" Color="#2e333a" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                </Grid.Effect>
+                <TextBox x:Name="txt_Oct1" Width="50" Height="50" Margin="10,12,0,13" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="192">
+                    <TextBox.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0.0" Color="#2e333a" />
+                            <GradientStop Offset="0.5" Color="White" />
+                            <GradientStop Offset="1.0" Color="#2e333a" />
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                    <TextBox.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </TextBox.Effect>
+                </TextBox>
+                <TextBlock x:Name="txtblk_dotIP1" Width="50" Height="50" Margin="85,38,0,-13" HorizontalAlignment="left" VerticalAlignment="Center" Background="Transparent" FontSize="22" FontWeight="DemiBold" Foreground="White" Text=".">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="White" />
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBox x:Name="txt_Oct2" Width="50" Height="50" Margin="110,12,0,13" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="168">
+                    <TextBox.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0.0" Color="#2e333a" />
+                            <GradientStop Offset="0.5" Color="White" />
+                            <GradientStop Offset="1.0" Color="#2e333a" />
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                    <TextBox.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </TextBox.Effect>
+                </TextBox>
+                <TextBlock x:Name="txtblk_dotIP2" Width="50" Height="50" Margin="185,38,0,-13" HorizontalAlignment="left" VerticalAlignment="Center" Background="Transparent" FontSize="22" FontWeight="DemiBold" Foreground="White" Text=".">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="White" />
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock x:Name="txtblk_dotIP3" Width="50" Height="50" Margin="285,38,0,-13" HorizontalAlignment="left" VerticalAlignment="Center" Background="Transparent" FontSize="22" FontWeight="DemiBold" Foreground="White" Text=".">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="White" />
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBlock x:Name="txtBlk_cidr" Width="53" Height="50" Margin="386,21,0,4" HorizontalAlignment="left" VerticalAlignment="Center" Background="Transparent" FontSize="22" Foreground="White" Text="CIDR">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="White" />
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBox x:Name="txt_Oct3" Width="50" Height="50" Margin="210,12,0,13" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="178">
+                    <TextBox.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0.0" Color="#2e333a" />
+                            <GradientStop Offset="0.5" Color="White" />
+                            <GradientStop Offset="1.0" Color="#2e333a" />
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                    <TextBox.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </TextBox.Effect>
+                </TextBox>
+                <TextBox x:Name="txt_Oct4" Width="50" Height="50" Margin="310,12,0,13" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="30">
+                    <TextBox.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0.0" Color="#2e333a" />
+                            <GradientStop Offset="0.5" Color="White" />
+                            <GradientStop Offset="1.0" Color="#2e333a" />
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                    <TextBox.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </TextBox.Effect>
+                </TextBox>
+                <TextBox x:Name="txtCidr" Width="57" Height="50" Margin="458,12,0,13" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="2" TextChanged="Cidr_TextChanged" RenderTransformOrigin="0.14,0.48">
+                    <TextBox.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0.0" Color="#2e333a" />
+                            <GradientStop Offset="0.5" Color="White" />
+                            <GradientStop Offset="1.0" Color="#2e333a" />
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                    <TextBox.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </TextBox.Effect>
+                </TextBox>
+                <TextBlock x:Name="txt_IpHeader" Width="260" Height="42" Margin="10,-49,0,0" HorizontalAlignment="left" VerticalAlignment="Top" Background="Transparent" FontSize="22" Foreground="White" Text="Enter IP-Address &amp; CIDR" />
+                <Grid Margin="190,274,423,-199" />
+                <TextBlock x:Name="txt_IpHeader_Copy" Width="145" Height="42" Margin="633,-49,-165,0" HorizontalAlignment="left" VerticalAlignment="Top" Background="Transparent" FontSize="22" Foreground="White" Text="Subnet Details&#xD;&#xA;" />
+            </Grid>
+            <Grid x:Name="newCidr" Width="613" Height="74" Margin="187,274,0,402" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name="gridSlider_GradientBackground_Top" Offset="0.0" Color="#2e333a" />
+                        <GradientStop x:Name="gridSlider_GradientBackground_Center" Offset="0.5" Color="Black" />
+                        <GradientStop x:Name="gridSlider_GradientBackground_Bottom" Offset="1.0" Color="#2e333a" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                </Grid.Effect>
+                <Slider x:Name="sldrHosts" Width="350" Margin="10,28,0,29" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoToolTipPrecision="10" Cursor="Hand" IsSnapToTickEnabled="True" TickPlacement="TopLeft" ValueChanged="sldrHost_ValueChanged">
+                    <Slider.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </Slider.Effect>
+                </Slider>
+                <TextBlock x:Name="txtBlk_nets" Width="55" Height="50" Margin="386,20,0,4" HorizontalAlignment="left" VerticalAlignment="Center" Background="Transparent" FontSize="22" Foreground="White" Text="Hosts">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="White" />
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBox x:Name="txtHosts" Width="145" Height="50" Margin="458,12,0,12" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="4" IsReadOnly="True" Text="0">
+                    <TextBox.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0.0" Color="#2e333a" />
+                            <GradientStop Offset="0.5" Color="White" />
+                            <GradientStop Offset="1.0" Color="#2e333a" />
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                    <TextBox.Effect>
+                        <DropShadowEffect BlurRadius="40" Direction="-90" ShadowDepth="1" Color="black" />
+                    </TextBox.Effect>
+                </TextBox>
+            </Grid>
+            <Grid x:Name="nav_pnl" Width="70" Height="70" Margin="0,-205,0,0" HorizontalAlignment="Left">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name="gridMenu_GradientBackground_Top" Offset="0.0" Color="#2e333a" />
+                        <GradientStop x:Name="gridMenu_GradientBackground_Center" Offset="0.5" Color="Black" />
+                        <GradientStop x:Name="gridMenu_GradientBackground_Bottom" Offset="1.0" Color="#2e333a" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                </Grid.Effect>
+                <TextBlock x:Name="txt_menu" Grid.Row="1" Grid.Column="0" Width="0" Height="70" Margin="65,-150,0,0" HorizontalAlignment="Left" Background="Transparent" FontSize="22" Foreground="White" Text="M E N U" />
+                <StackPanel x:Name="st_pnl">
+                    <Grid Height="90">
+                        <ToggleButton x:Name="Tg_Btn" Grid.Column="0" Width="30" Height="30" Margin="20,-20,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" BorderThickness="0" Cursor="Hand" Style="{StaticResource tb_style}">
+                            <ToggleButton.Background>
+                                <ImageBrush ImageSource="toggle_menu_48px.png" />
+                            </ToggleButton.Background>
+                            <ToggleButton.Effect>
+                                <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                            </ToggleButton.Effect>
+                            <ToggleButton.Triggers>
+                                <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="HideStackPanel">
+                                            <DoubleAnimation BeginTime="0:0:0" Storyboard.TargetName="nav_pnl" Storyboard.TargetProperty="Width" From="150" To="70" Duration="0:0:0.2" />
+                                            <DoubleAnimation BeginTime="0:0:0" Storyboard.TargetName="nav_pnl" Storyboard.TargetProperty="Height" From="150" To="70" Duration="0:0:0.2" />
+                                            <DoubleAnimation BeginTime="0:0:0" Storyboard.TargetName="txt_menu" Storyboard.TargetProperty="Width" From="150" To="0" Duration="0:0:0.2" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                    <BeginStoryboard>
+                                        <Storyboard x:Name="ShowStackpanel">
+                                            <DoubleAnimation BeginTime="0:0:0" Storyboard.TargetName="nav_pnl" Storyboard.TargetProperty="Height" From="70" To="150" Duration="0:0:0.2" />
+                                            <DoubleAnimation BeginTime="0:0:0" Storyboard.TargetName="nav_pnl" Storyboard.TargetProperty="Width" From="70" To="150" Duration="0:0:0.2" />
+                                            <DoubleAnimation BeginTime="0:0:0" Storyboard.TargetName="txt_menu" Storyboard.TargetProperty="Width" From="0" To="150" Duration="0:0:0.2" />
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </ToggleButton.Triggers>
+                        </ToggleButton>
+                    </Grid>
+                    <Grid/>
+                </StackPanel>
+            </Grid>
+            <Grid Width="434" Height="209" Margin="361,514,0,0" HorizontalAlignment="Left" VerticalAlignment="top">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name="gridResult_GradientBackground_Top" Offset="0.0" Color="#2e333a" />
+                        <GradientStop x:Name="gridResult_GradientBackground_Center" Offset="0.5" Color="Black" />
+                        <GradientStop x:Name="gridResult_GradientBackground_Bottom" Offset="1.0" Color="#2e333a" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                </Grid.Effect>
+                <Grid Width="1194" Height="224" Margin="-360,234,-400,-249" HorizontalAlignment="Left" VerticalAlignment="top">
+                    <Grid.Background>
+                        <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                            <GradientStop x:Name="gridResultSubnet_GradientBackground_Top" Color="#FF2E333A" Offset="0"/>
+                            <GradientStop x:Name="gridResultSubnet_GradientBackground_Center" Color="#FF383431" Offset="0.5"/>
+                            <GradientStop x:Name="gridResultSubnet_GradientBackground_Bottom" Color="#FF0A0908" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="88*" />
+                        <RowDefinition Height="195*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </Grid.Effect>
+                    <Label Content="Find the smallest subnet that contains both IP addresses" HorizontalAlignment="Left" Margin="26,15,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" FontSize="22" Width="573" IsEnabled="False"/>
+                    <TextBox x:Name="txtSM1Oct1" Width="50" Height="48" Margin="86,29,0,77" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="72" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0.0" Color="#2e333a" />
+                                <GradientStop Offset="0.5" Color="White" />
+                                <GradientStop Offset="1.0" Color="#2e333a" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="txtSM1Oct2" Width="50" Height="48" Margin="155,29,0,77" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="154" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0.0" Color="#2e333a" />
+                                <GradientStop Offset="0.5" Color="White" />
+                                <GradientStop Offset="1.0" Color="#2e333a" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="txtSM1Oct3" Width="50" Height="47" Margin="222,29,0,78" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="15" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0.0" Color="#2e333a" />
+                                <GradientStop Offset="0.5" Color="White" />
+                                <GradientStop Offset="1.0" Color="#2e333a" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="txtSM1Oct4" Width="50" Height="47" Margin="289,29,0,78" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="7" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0.0" Color="#2e333a" />
+                                <GradientStop Offset="0.5" Color="White" />
+                                <GradientStop Offset="1.0" Color="#2e333a" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="txtSM2Oct1" Width="50" Height="48" Margin="86,86,0,20" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="72" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0.0" Color="#2e333a" />
+                                <GradientStop Offset="0.5" Color="White" />
+                                <GradientStop Offset="1.0" Color="#2e333a" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="txtSM2Oct2" Width="50" Height="48" Margin="155,86,0,20" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="154" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0.0" Color="#2e333a" />
+                                <GradientStop Offset="0.5" Color="White" />
+                                <GradientStop Offset="1.0" Color="#2e333a" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="txtSM2Oct3" Width="50" Height="48" Margin="222,87,0,19" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="20" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0.0" Color="#2e333a" />
+                                <GradientStop Offset="0.5" Color="White" />
+                                <GradientStop Offset="1.0" Color="#2e333a" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                        </TextBox.Effect>
+                    </TextBox>
+                    <TextBox x:Name="txtSM2Oct4" Width="50" Height="48" Margin="289,87,0,19" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="3" Text="89" Grid.Row="1">
+                        <TextBox.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0.0" Color="#2e333a" />
+                                <GradientStop Offset="0.5" Color="White" />
+                                <GradientStop Offset="1.0" Color="#2e333a" />
+                            </LinearGradientBrush>
+                        </TextBox.Background>
+                        <TextBox.Effect>
+                            <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                        </TextBox.Effect>
+                    </TextBox>
+                    <Label Content="IP 1" HorizontalAlignment="Left" Margin="26,34,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" FontSize="22" Height="37"/>
+                    <Label Content="IP 2" HorizontalAlignment="Left" Margin="26,92,0,0" Grid.Row="1" VerticalAlignment="Top" Foreground="White" FontSize="22" RenderTransformOrigin="0.554,0.987" Height="37"/>
+                    <Button Content="RUN" HorizontalAlignment="Left" Margin="429,29,0,0" Grid.Row="1" VerticalAlignment="Top" Width="127" Height="106" FontSize="22" Click="Button_Click" Foreground="Black">
+                        <Button.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0.0" Color="#2e333a" />
+                                <GradientStop Offset="0.5" Color="White" />
+                                <GradientStop Offset="1.0" Color="#2e333a" />
+                            </LinearGradientBrush>
+                        </Button.Background>
+                        <Button.Effect>
+                            <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                        </Button.Effect>
+                    </Button>
+                    <TextBox x:Name="txtSMSubMask" HorizontalAlignment="Left" Height="35" Margin="618,29,0,90" TextWrapping="Wrap" Text="SubMask" VerticalAlignment="Center" Width="176" FontSize="22" MaxLength="2" VerticalScrollBarVisibility="Disabled" TextAlignment="Left" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" IsEnabled="False" SelectionOpacity="0" Grid.Row="1"/>
+                    <TextBox x:Name="txtSMNetzID" HorizontalAlignment="Left" Height="35" Margin="618,64,0,55" Grid.Row="1" TextWrapping="Wrap" Text="Net-ID" VerticalAlignment="Center" Width="176" FontSize="22" MaxLength="2" VerticalScrollBarVisibility="Disabled" TextAlignment="Left" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" IsEnabled="False"/>
+                    <TextBox x:Name="txtSMBCID" HorizontalAlignment="Left" Height="35" Margin="618,104,0,15" Grid.Row="1" TextWrapping="Wrap" Text="BC-ID" VerticalAlignment="Center" Width="176" FontSize="22" MaxLength="2" VerticalScrollBarVisibility="Disabled" TextAlignment="Left" VerticalContentAlignment="Center" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" IsEnabled="False"/>
+                </Grid>
+                <TextBox x:Name="txtRes" HorizontalAlignment="Left" Height="189" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="414" Background="{x:Null}" Foreground="White" FontSize="22"/>
+            </Grid>
+            <Button x:Name="btn_Run" Width="155" Height="209" Margin="187,514,0,27" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" Click="Run_Click" Content="R U N" Cursor="Hand" FontSize="22" FontWeight="DemiBold" BorderBrush="Black">
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop Offset="0.0" Color="#2e333a" />
+                        <GradientStop Offset="0.5" Color="White" />
+                        <GradientStop Offset="1.0" Color="#2e333a" />
+                    </LinearGradientBrush>
+                </Button.Background>
+                <Button.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                </Button.Effect>
+            </Button>
+            <Grid x:Name="title_Copy" Width="394" Height="113" Margin="800,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name="gridTitle1_GradientBackground_Top" Offset="0.0" Color="#2e333a" />
+                        <GradientStop x:Name="gridTitle1_GradientBackground_Center" Offset="0.5" Color="Black" />
+                        <GradientStop x:Name="gridTitle1_GradientBackground_Bottom" Offset="1.0" Color="#2e333a" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                </Grid.Effect>
+            </Grid>
+            <Grid x:Name="newCidr_Copy" Width="613" Height="74" Margin="187,348,0,328" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                        <GradientStop x:Name="gridSlider_GradientBackground_Top1" Offset="0.0" Color="#2e333a" />
+                        <GradientStop x:Name="gridSlider_GradientBackground_Center1" Offset="0.5" Color="Black" />
+                        <GradientStop x:Name="gridSlider_GradientBackground_Bottom1" Offset="1.0" Color="#2e333a" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.Effect>
+                    <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                </Grid.Effect>
+                <Slider x:Name="sldrNets" Width="350" Margin="10,28,0,29" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" AutoToolTipPrecision="10" Cursor="Hand" IsSnapToTickEnabled="True" TickPlacement="TopLeft" ValueChanged="sldrNets_ValueChanged">
+                    <Slider.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="black" />
+                    </Slider.Effect>
+                </Slider>
+                <TextBlock x:Name="txtBlk_nets1" Width="55" Height="50" Margin="386,20,0,4" HorizontalAlignment="left" VerticalAlignment="Center" Background="Transparent" FontSize="22" Foreground="White" Text="Nets">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="15" Direction="-90" ShadowDepth="1" Color="White" />
+                    </TextBlock.Effect>
+                </TextBlock>
+                <TextBox x:Name="txtNets" Width="145" Height="50" Margin="458,12,0,12" HorizontalAlignment="Left" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="22" FontWeight="DemiBold" MaxLength="4" IsReadOnly="True" Text="0">
+                    <TextBox.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Offset="0.0" Color="#2e333a" />
+                            <GradientStop Offset="0.5" Color="White" />
+                            <GradientStop Offset="1.0" Color="#2e333a" />
+                        </LinearGradientBrush>
+                    </TextBox.Background>
+                    <TextBox.Effect>
+                        <DropShadowEffect BlurRadius="40" Direction="-90" ShadowDepth="1" Color="black" />
+                    </TextBox.Effect>
+                </TextBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
