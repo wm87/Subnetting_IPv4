@@ -26,3 +26,17 @@ C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Debug\WPF_Supernett
 C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Debug\WPF_Supernetting.csproj.CoreCompileInputs.cache
 C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Debug\WPF_Supernetting.exe
 C:\Users\mawei\Desktop\WPF_Supernetting\WPF_Supernetting\obj\Debug\WPF_Supernetting.pdb
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\bin\Debug\WPF_Supernetting.exe.config
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\bin\Debug\WPF_Supernetting.exe
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\bin\Debug\WPF_Supernetting.pdb
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\WPF_Supernetting.csprojAssemblyReference.cache
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\MainWindow.baml
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\MainWindow.g.cs
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\App.g.cs
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\WPF_Supernetting_MarkupCompile.cache
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\WPF_Supernetting.g.resources
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\WPF_Supernetting.Properties.Resources.resources
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\WPF_Supernetting.csproj.GenerateResource.cache
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\WPF_Supernetting.csproj.CoreCompileInputs.cache
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\WPF_Supernetting.exe
+\\tc-fs\V090\weidemann\github\Subnetting_IPv4\WPF_Supernetting\obj\Debug\WPF_Supernetting.pdb

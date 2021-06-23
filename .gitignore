@@ -1,0 +1,9 @@
+
+*.cache
+*.baml
+*.cache
+WPF_Supernetting\bin\*
+WPF_Supernetting\obj\*
+SubnettingScanner\bin\*
+SubnettingScanner\obj\*
+.vs\*
